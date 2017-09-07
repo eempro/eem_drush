@@ -1,3 +1,0 @@
-#!/usr/bin/env drush
-
-drush_print('Installing eempro');
