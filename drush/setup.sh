@@ -10,8 +10,7 @@ echo -e "${BLUE}Installing Drupal:${NC}"
 SITE_NAME="monkeytwo"
 DESTINATION="/var/www"
 mkdir -p ${DESTINATION}
-drush dl "drupal-8.x" --destination="${DESTINATION}" --drupal-project-rename="${SITE_NAME}"
+drush dl "drupal" --destination="${DESTINATION}" --drupal-project-rename="${SITE_NAME}"
 
 echo -e "${BLUE}Setting up the database:${NC}"
-echo $MYSQL_USER
-
+drush si standard --root="${DESTINATION}/${SITE_NAME}" --db-url=mysql://"${MYSQL_USER}":"${MYSQL_PASS}"@localhost/eempro
