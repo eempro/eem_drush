@@ -13,4 +13,4 @@
 1. Make `/default/sites/files` folder writable
 
 # Aptitude installs
-`mysql-server mysql-client git python3 drush libapache2-mod-php php-xml php7.0-gd`
+`mysql-server mysql-client git python3 drush libapache2-mod-php php-xml php7.0-gd composer`
