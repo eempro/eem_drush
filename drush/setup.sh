@@ -2,7 +2,13 @@ composer create-project drupal-composer/drupal-project:8.x-dev /var/www/monkeytw
 cd /var/www/monkeytwo
 composer config repositories.drupal composer https://packages.drupal.org/8
 
-# Modules
+# Uninstall modules
+drush --root=/var/www/monkeytwo/web pmu dblog
+drush --root=/var/www/monkeytwo/web pmu tour
+drush --root=/var/www/monkeytwo/web pmu syslog
+g
+
+# Install modules
 php ~/composer.phar require "drupal/paragraphs ~1.1"
 drush --root=/var/www/monkeytwo/web en paragraphs
 
