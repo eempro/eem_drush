@@ -6,7 +6,7 @@ composer config repositories.drupal composer https://packages.drupal.org/8
 drush --root=/var/www/monkeytwo/web pmu dblog
 drush --root=/var/www/monkeytwo/web pmu tour
 drush --root=/var/www/monkeytwo/web pmu syslog
-g
+drush --root=/var/www/monkeytwo/web pmu search
 
 # Install modules
 php ~/composer.phar require "drupal/paragraphs ~1.1"
@@ -31,12 +31,18 @@ drush --root=/var/www/monkeytwo/web role-add-perm 'Level-1' 'edit own facility c
 drush --root=/var/www/monkeytwo/web role-add-perm 'Level-1' 'create meter content'
 drush --root=/var/www/monkeytwo/web role-add-perm 'Level-1' 'delete own meter content'
 drush --root=/var/www/monkeytwo/web role-add-perm 'Level-1' 'edit own meter content'
+drush --root=/var/www/monkeytwo/web role-add-perm 'Level-1' 'create monthly_fuel_consumpution content'
+drush --root=/var/www/monkeytwo/web role-add-perm 'Level-1' 'delete own monthly_fuel_consumpution content'
+drush --root=/var/www/monkeytwo/web role-add-perm 'Level-1' 'edit own monthly_fuel_consumpution content'
 
 drush --root=/var/www/monkeytwo/web role-remove-perm 'anonymous' 'access content'
 drush --root=/var/www/monkeytwo/web role-remove-perm 'anonymous' 'use search'
 drush --root=/var/www/monkeytwo/web role-remove-perm 'anonymous' 'search'
 drush --root=/var/www/monkeytwo/web role-remove-perm 'anonymous' 'access comments'
 drush --root=/var/www/monkeytwo/web role-remove-perm 'anonymous' 'access site-wide contact form'
+
+drush --root=/var/www/monkeytwo/web role-create 'webmaster'
+
 
 # Site config
 drush --root=/var/www/monkeytwo config-set system.site name 'eEnergy Manager'
